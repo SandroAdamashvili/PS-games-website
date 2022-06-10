@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Games{%endblock%}
+
+{% block content %}
+    {{ super() }}
+<br>
+{% for game in games %}
+<form method="post" style="width:50%; margin-left: 10px; background-color: #079992">
+    <h2>{{game.id}}. title: {{game.game_title}}</h2>
+    <img src="{{game.img_source}}" class="img-thumbnail" alt="...">
+    <h3>price: {{game.price}}</h3>
+</form>
+<br>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}AddGame{%endblock%}
+
+{% block content %}
+{{ super() }}
+<br>
+    <form method="post" style="width:50%; margin-left: 10px">
+        <h3>თამაშის დამატება</h3>
+      <div class="form-group">
+        <input type="text" name="title" class="form-control" placeholder="Game Title"><br>
+        <input type="text" name="price" class="form-control"  placeholder="Price"><br>
+      </div>
+        {% with messages = get_flashed_messages() %}
+            {% for each in messages %}
+                <p>{{each}}</p>
+            {% endfor %}
+        {% endwith %}
+    <button type="submit" class="btn btn-primary">Add Game</button>
+    </form>
+{% endblock %}

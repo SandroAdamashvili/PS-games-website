@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}MyGames{%endblock%}
+
+{% block content %}
+    {{ super() }}
+<br>
+{% for each in my_games %}
+<form method="post" style="width:20%; margin-left: 600px; background-color: #079992">
+    <h2>{{each.id}}. title: {{each.game_title}}</h2>
+    <img src="https://cdn1.iconfinder.com/data/icons/devices-7/128/devices-12-512.png" class="img-thumbnail" alt="...">
+    <h3>price: ${{each.price}}</h3>
+</form>
+<br>
+{% endfor %}
+{% endblock %}
